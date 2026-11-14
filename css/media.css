@@ -1,0 +1,311 @@
+/* * tablet */
+
+@media (min-width: 768px) {
+
+    .dashboard-layout {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .sidebar {
+        position: sticky;
+        top: 0;
+        display: block;
+        width: 66px;
+        min-height: 100vh;
+        padding: 18px 9px;
+    }
+
+    .logo-text,
+    .nav-link span,
+    .actions-title,
+    .action-link span {
+        display: none;
+    }
+
+    .sidebar-logo,
+    .nav-link,
+    .action-link {
+        justify-content: center;
+    }
+
+    .quick-actions {
+        margin-top: 25px;
+    }
+
+    .main-content {
+        flex: 1;
+        padding: 18px;
+    }
+
+    /* * header */
+
+    .header {
+        grid-template-columns: auto auto 1fr auto auto;
+        grid-template-areas: "brand status . actions user";
+        min-height: 84px;
+        padding: 15px 20px;
+        gap: 18px;
+    }
+
+    .header-brand h1 {
+        font-size: 22px;
+    }
+
+    .header-user-info {
+        display: block;
+    }
+
+    .online-status {
+        justify-self: center;
+    }
+
+    /* * statistics */
+
+    .stats-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .stat-card {
+        min-height: 125px;
+        padding: 17px;
+    }
+
+    .stat-card h2 {
+        font-size: 21px;
+    }
+
+    /* * dashboard grid */
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "activities chart"
+            "transactions transactions"
+            "bills account"
+            "budget payment";
+        align-items: start;
+    }
+
+
+    .right-column,
+    .chart-account-column {
+        display: contents;
+    }
+
+    .activities-panel {
+        grid-area: activities;
+    }
+
+    .chart-panel {
+        grid-area: chart;
+    }
+
+    .transactions-panel {
+        grid-area: transactions;
+    }
+
+    .bills-panel {
+        grid-area: bills;
+    }
+
+    .account-panel {
+        grid-area: account;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .account-panel .account-row {
+        flex: 1;
+        margin-bottom: 9px;
+    }
+
+    .account-panel .account-row:last-child {
+        margin-bottom: 0;
+    }
+
+    .budget-panel {
+        grid-area: budget;
+    }
+
+    .payment-panel {
+        grid-area: payment;
+    }
+
+    .transactions-table {
+        min-width: 580px;
+    }
+}
+
+
+
+    /* * desktop */
+
+    @media (min-width: 1280px) {
+
+        .dashboard-layout {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 0;
+            display: block;
+            width: 230px;
+            min-height: 100vh;
+            padding: 20px 15px;
+        }
+
+        .logo-text,
+        .nav-link span,
+        .actions-title,
+        .action-link span {
+            display: block;
+        }
+
+        .sidebar-logo {
+            justify-content: flex-start;
+        }
+
+        .nav-link {
+            justify-content: flex-start;
+        }
+
+        .action-link {
+            justify-content: flex-end;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px 22px;
+        }
+
+        /* * header */
+
+        .header {
+            grid-template-columns: auto auto 1fr auto auto;
+            grid-template-areas: "brand status . actions user";
+            min-height: 84px;
+            padding: 15px 20px;
+            gap: 18px;
+        }
+
+        .header-brand h1 {
+            font-size: 24px;
+        }
+
+        .header-user-info {
+            display: block;
+        }
+
+        .header-user>img {
+            width: 42px;
+            height: 42px;
+        }
+
+        /* * statistics */
+
+        .stats-grid {
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .stat-card {
+            min-height: 118px;
+            padding: 18px 22px;
+        }
+
+        .stat-card h2 {
+            font-size: 25px;
+        }
+
+        .dashboard-content {
+            margin-top: 18px;
+        }
+
+        .panel {
+            padding: 16px;
+        }
+
+        /* * dashboard grid */
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.05fr) minmax(0, 1fr);
+            grid-template-areas:
+                "right transactions transactions"
+                "budget chart payment";
+            gap: 14px;
+            align-items: start;
+        }
+
+        .right-column {
+            grid-area: right;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .chart-account-column {
+            grid-area: chart;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            align-self: start;
+        }
+
+        .transactions-panel {
+            grid-area: transactions;
+        }
+
+        .budget-panel {
+            grid-area: budget;
+            display: block;
+        }
+
+        .payment-panel {
+            grid-area: payment;
+        }
+
+        .chart-panel,
+        .account-panel {
+            order: initial;
+        }
+
+        .budget-panel .section-heading {
+            margin-bottom: 15px;
+        }
+
+        .budget-summary,
+        .budget-item {
+            margin-bottom: 12px;
+        }
+
+        /* * transactions table */
+
+        .transactions-table {
+            min-width: 0;
+            font-size: 10px;
+        }
+
+        .transactions-table th,
+        .transactions-table td {
+            padding: 11px 5px;
+        }
+
+        .transaction-name strong {
+            font-size: 10px;
+        }
+
+        /* * payment methods */
+
+        .payment-card {
+            min-height: 150px;
+            padding: 15px;
+        }
+        
+    }
